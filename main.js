@@ -3,6 +3,7 @@ import {books} from "./data.js"
 import {style} from "./style.js"
 const list =document.getElementById("list");
 const selectbtns=document.querySelectorAll('input[name="select"]')
+const labels=document.getElementsByTagName("label")
 const searchbtn=document.getElementById("search")
 let quoteflag=0;
 
@@ -13,7 +14,9 @@ const search=(books)=>{
    const searching=()=>{
      let sorted=[]
      if(select=="b"){
-       
+       labels[0].style.cssText="background-color:var(--primary);color:var(--tertiary);font-weight:bold; border-radius:8px;";
+       labels[1].style.cssText="background-color:var(--secondary);color:var(--tertiary);font-weight:normal; border-radius:0px;"
+       searchbtn.placeholder="eg:atomic habits, art of war, book etc...."
    //  console.log(searchbtn.value)
     // console.log(books[0].name)
         books.forEach((book)=>{
@@ -25,6 +28,9 @@ const search=(books)=>{
             
      }
      else{
+       labels[1].style.cssText="background-color:var(--primary);color:var(--tertiary);font-weight:bold;border-radius:8px";
+       labels[0].style.cssText="background-color:var(--secondary);color:var(--tertiary);font-weight:normal; border-radius:0px"
+       searchbtn.placeholder="eg: what you think...,quotes etc....."
         list.innerHTML=""
          books.forEach((book)=>{
              
