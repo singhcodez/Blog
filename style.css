@@ -1,13 +1,14 @@
 
 :root{
-    --primary:#2E8B57;
-    --secondary:#8FBC8F;
+    --primary:#4169E1;
+    --secondary:#94BAC4;
     --tertiary:#FAF0E6;
-    --grey-shade:#FFF8DC;
+    --quote-text:#2E8B57;
 }
 body {
     font-size: 15px;
     background: var(--tertiary);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 #top-sec{
     border-radius: 10px 10px 0px 0px;
@@ -64,9 +65,10 @@ input[type="radio"]{
 }
 a{
     text-decoration: none;
-    color:#8390B6;
+    color:var(--quote-text);
     font-size:15pt;
     font-style: italic;
+    font-family: Arial, Helvetica;
 }
 
 @media only screen and (width>360px ) and (height>600px){
