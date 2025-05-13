@@ -1,20 +1,11 @@
+// list of book
+import {books} from "./data.js"
+import {style} from "./style.js"
 const list =document.getElementById("list");
 const selectbtns=document.querySelectorAll('input[name="select"]')
 const searchbtn=document.getElementById("search")
 let quoteflag=0;
-//, list of books
-const books=[
-        {
-        name:"book-1",
-        author:"writer",
-        quotes:["do it","just do it"]
-        },
-        {
-        name:"bro2",
-        author:"writer1",
-        quotes:["be calm","fresh"]
-        }
-        ]
+
         // searching 
   
 const search=(books)=>{
@@ -22,6 +13,7 @@ const search=(books)=>{
    const searching=()=>{
      let sorted=[]
      if(select=="b"){
+       
    //  console.log(searchbtn.value)
     // console.log(books[0].name)
         books.forEach((book)=>{
@@ -59,7 +51,6 @@ selectbtns.forEach((btn)=>{
   })
 
 
-
 // display books
 const display= (books)=>{
   // getting quotes & putting it in <li>
@@ -70,7 +61,7 @@ const display= (books)=>{
       
   //    console.log(quotes);
       
-     let item=` <li>
+     let item=` <li class="book-name">
              <h2>${book.name.replaceAll("-"," ")} by ${book.author}</h2>
              <ul class="quotes">
                 ${quotes}
@@ -79,7 +70,9 @@ const display= (books)=>{
           //appending item in html 
           list.innerHTML+=item;
   //        console.log(book.name)
+       
         })
+        style();
 }
 const listQuotes=(book)=>{
   let quotes=``;
@@ -97,3 +90,5 @@ const listQuotes=(book)=>{
   return quotes;
 }
 display(books);
+search(books);
+style();
