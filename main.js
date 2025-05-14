@@ -20,7 +20,7 @@ const search=(books)=>{
    //  console.log(searchbtn.value)
     // console.log(books[0].name)
         books.forEach((book)=>{
-         if(book.name.includes(searchbtn.value.toLowerCase().replaceAll(" ","-"))){
+         if(book.name.toLowerCase().includes(searchbtn.value.toLowerCase().replaceAll(" ","-"))){
                sorted.push(book)
          }  
             })
@@ -85,8 +85,8 @@ const listQuotes=(book)=>{
   book.quotes.forEach((quote, index) => {
     // quoteflag=1, come from searching
     if(quoteflag){
-       if(quote.includes(searchbtn.value.toLowerCase()))
-        quotes += `<li><a href="./quotes/${book.name}/${book.name}${index}.html">${quote}</a></li>`;    
+       if(quote.toLowerCase().includes(searchbtn.value.toLowerCase()))
+        quotes += `<li><a href="./quotes/${book.name}/${book.name}${index}.html">${quote}</a></li><br>`;    
     }
     //quoteflag=0, comes from display 
     else{
