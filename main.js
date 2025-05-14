@@ -14,8 +14,8 @@ const search=(books)=>{
    const searching=()=>{
      let sorted=[]
      if(select=="b"){
-       labels[0].style.cssText="background-color:var(--primary);color:var(--tertiary);font-weight:bold; border-radius:8px;";
-       labels[1].style.cssText="background-color:var(--secondary);color:var(--tertiary);font-weight:normal; border-radius:0px;"
+       labels[0].style.cssText="background-color:var(--primary);color:var(--tertiary);font-weight:bold;";
+       labels[1].style.cssText="background-color:var(--secondary);color:var(--tertiary);font-weight:normal;"
        searchbtn.placeholder="eg:atomic habits, art of war, book etc...."
    //  console.log(searchbtn.value)
     // console.log(books[0].name)
@@ -28,8 +28,8 @@ const search=(books)=>{
             
      }
      else{
-       labels[1].style.cssText="background-color:var(--primary);color:var(--tertiary);font-weight:bold;border-radius:8px";
-       labels[0].style.cssText="background-color:var(--secondary);color:var(--tertiary);font-weight:normal; border-radius:0px"
+       labels[1].style.cssText="background-color:var(--primary);color:var(--tertiary);font-weight:bold;";
+       labels[0].style.cssText="background-color:var(--secondary);color:var(--tertiary);font-weight:normal;"
        searchbtn.placeholder="eg: what you think...,quotes etc....."
         list.innerHTML=""
          books.forEach((book)=>{

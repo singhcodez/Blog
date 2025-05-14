@@ -1,13 +1,20 @@
-
+/*
+*:hover{border:1px solid red;}
+*/
 :root{
-    --primary:#4169E1;
-    --secondary:#94BAC4;
-    --tertiary:#FAF0E6;
-    --quote-text:#2E8B57;
+    --primary:#B4121B;
+    --secondary:#FF9595;
+    --tertiary:#ffffff;
+    --bg:#111111;
+    --quote-text:#FBFF78;
 }
+
+
+
 body {
     font-size: 15px;
-    background: var(--tertiary);
+    color: snow;
+    background: var(--bg);
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 #top-sec{
@@ -15,29 +22,48 @@ body {
     background-color: var(--primary);
     color:var(--tertiary);
 }
-#top{
-    
-    margin:0px auto;
-    padding: 3px 5px;
-    padding-top: 15pt;
-    font-size:21pt;
+#top img{
+    border-radius:50%;
 }
-
+#top h1{
+    border-radius: 0pt 10pt 10pt 0px;
+    display:inline-block;
+    margin-left:5pt;
+    padding:2pt;
+   
+}
+#top{
+    display:flex;
+    direction: row;
+    justify-content: left;
+    margin:0px auto;
+    padding: 2pt 5pt;
+    padding-top: 10pt;
+    font-size:10pt;
+}
+blockquote{
+    text-align: center;
+    font-family:"Segoe UI", Tahoma, Geneva, Verdana,arial;
+    font-weight: bold;
+    font-size: 26pt;
+    padding:10pt 5pt;
+}
 #search{
     border-radius: 10px;
     border:none;
-    margin: 5pt;
-    width:320px;
-    height:28px;
+    margin: 10pt 12% 30pt 12%;
+    width:75%;
+    height:35pt;
 }
 #select-sec{
-    background-color: var(--primary);
+    
     color:var(--tertiary);
     display: flex;
     flex-direction: row;
     justify-content:space-evenly;
     font-size:15pt;
     font-weight: normal;
+    border-radius:0px 0px 10px 10px;
     
 }
 label{
@@ -47,7 +73,11 @@ label{
     padding:5pt 0pt;
     text-align: center;
     border:2px solid var(--tertiary);
+    border-radius:0pt 0pt 0pt 10pt;
     
+}
+label[for="quotes"]{
+    border-radius:0pt 0pt 10pt 0pt;
 }
 input[type="radio"]{
     display: none;
@@ -66,26 +96,8 @@ input[type="radio"]{
 a{
     text-decoration: none;
     color:var(--quote-text);
-    font-size:15pt;
+    font-size:12pt;
     font-style: italic;
     font-family: Arial, Helvetica;
 }
 
-@media only screen and (width>360px ) and (height>600px){
-   #top{ display: inline;
-       width:40%;
-   }
-   #search-sec{
-       width:60%;
-   }
-   #search{
-       width:530px;
-       margin:25px 0px;
-   }
-    #top-sec{
-        display:flex;
-        flex-direction: row;
-        justify-content:space-between;
-    }
-    
-}
