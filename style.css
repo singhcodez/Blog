@@ -33,6 +33,7 @@ body {
     padding:2pt;
    
 }
+
 #top{
     display:flex;
     direction: row;
@@ -89,12 +90,20 @@ input[type="radio"]{
     padding:0px;
 }
 #list li{
-    margin-left: 5pt;
+    margin-left: 10pt;
+}
+#list li:hover{
+    color: gold;
 }
 .quotes li{
     margin:5pt 0pt;
-    list-style: disc ;
+    list-style: decimal ;
 }
+.quotes li:hover{
+    color: #ffffff;
+    font-weight: bold;
+}
+
 a{
     text-decoration: none;
     color:var(--quote-text);
