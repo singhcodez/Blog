@@ -6,7 +6,7 @@
     --secondary:#FF9595;
     --tertiary:#ffffff;
     --bg:#111111;
-    --quote-text:#EBEBEB;
+    --quote-text:#F9F9F9;
 }
 
 
@@ -93,12 +93,12 @@ input[type="radio"]{
 }
 .quotes li{
     margin:5pt 0pt;
+    list-style: disc ;
 }
 a{
     text-decoration: none;
     color:var(--quote-text);
     font-size:12pt;
-    font-style: italic;
     font-family: Arial, Helvetica;
 }
 
