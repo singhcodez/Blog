@@ -3,6 +3,7 @@
 */
 @keyframes select-sec {
     0% {top:-100pt;}
+    50%{top:0pt;}
     100%{top:-18pt;}
 }
 :root{
@@ -84,7 +85,7 @@ blockquote{
     
 }
  .select-secAnimate{
-     animation:select-sec 0.6s 1;
+     animation:select-sec 1s 1;
      
  }
 

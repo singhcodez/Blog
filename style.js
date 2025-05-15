@@ -56,6 +56,6 @@ searchbtn.addEventListener("click",()=>{
        document.getElementById("select-sec").setAttribute("class","select-secAnimate")
         setInterval(()=>{
           
-        document.getElementById("select-sec").style.cssText="top:-18pt; z-index:100;"},500);
+        document.getElementById("select-sec").style.cssText="top:-18pt; z-index:100;"},600);
 })
 
