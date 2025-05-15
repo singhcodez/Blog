@@ -1,5 +1,5 @@
 import {books} from "./data.js";
-
+const searchbtn=document.getElementById("search")
 const bookNames = document.getElementsByClassName("book-name")
 const quotes =document.getElementsByClassName("quotes")
 
@@ -48,4 +48,14 @@ for (let i = 0; i < bookNames.length; i++) {
     
   });
 }
+ 
+
 }
+
+searchbtn.addEventListener("click",()=>{
+       
+        setInterval(()=>{
+          document.getElementById("select-sec").setAttribute("class","select-secAnimate")
+        document.getElementById("select-sec").style.top="0pt";},400);
+})
+
