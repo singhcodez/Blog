@@ -117,21 +117,19 @@ input[type="radio"]{
     color: gold;
     transition: 0.4s ease;
 }
+li a:hover{
+    font-weight: bold;
+}
 .quotes li{
-    margin:5pt 0pt;
+    margin:5pt 10pt 5pt 0pt;
+    
     list-style: decimal ;
 }
-.quotes li:hover{
-    color: #ffffff;
-    }
-li:hover{
-    font-weight: bold;
-    transition:0.5s ease;
-}
+
 a{
     text-decoration: none;
     color:var(--quote-text);
-    font-size:12pt;
+    font-size:14pt;
     font-family: Arial, Helvetica;
 }
 

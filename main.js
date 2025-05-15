@@ -90,7 +90,7 @@ const listQuotes=(book)=>{
     }
     //quoteflag=0, comes from display 
     else{
-  quotes += `<li><a href="./quotes/${book.name}/${book.name}${index}.html">${quote}</a></li>`;
+  quotes += `<li><a href="./quotes/${book.name}/${book.name}${index}.html">${quote}</a></li><br>`;
     }
 });
   return quotes;

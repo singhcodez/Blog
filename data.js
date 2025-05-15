@@ -2,8 +2,8 @@ export const books=[
         {
         name:"The-Art-of-War",
         author:"Sun Tzu",
-        quotes:
-        ['"There is no instance of country having benefited from prolonged warfare."',
+        quotes:[
+          '"There is no instance of country having benefited from prolonged warfare."',
         '"It is a matter of life and death, a road either to safety or to ruin. Hence it is a subject of inquiry which can no account be neglected."',
         '"The supreme art of war is to subdue the enemy without fighting."',
         '"He will win who knows when to fight when not to fight."',
@@ -34,7 +34,39 @@ export const books=[
         {
         name:"The-laws-of-human-nature",
         author:"Robert Greene",
-        quotes:["be calm","fresh"]
+        quotes : [
+    "The deepest need of human nature is the desire to be appreciated.",
+    "We are all actors in our own lives, and we must learn to see through the masks that others wear.",
+    "The greatest power you can possess is the ability to control your own emotions.",
+    "People are rarely what they seem. We must learn to look beneath the surface and see their true nature.",
+    "The key to understanding human behavior is to recognize the power of emotions.",
+    "We are all driven by unconscious desires and motivations that we are not even aware of.",
+    "To truly understand others, we must first understand ourselves.",
+    "The more you try to control people, the more they will resist you.",
+    "The best way to influence others is to appeal to their self-interest.",
+    "The world is full of people who are trying to deceive you. You must learn to see through their lies.",
+    "Never be intimidated by the surface. The most complex and cunning people mask themselves in simplicity.",
+    "The human animal is a social creature. We are deeply influenced by the groups we belong to and the people around us.",
+    "Most people are emotionally driven, not rational. Understanding this is key to influencing them.",
+    "We are all prone to illusions and biases. The first step to wisdom is recognizing this.",
+    "The shadow self is the darker side of your personality. Ignoring it doesn't make it go away; it makes it stronger.",
+    "Empathy is not simply feeling what others feel. It's understanding their perspective, their motivations.",
+    "People rarely change. Accept this and adjust your expectations accordingly.",
+    "The desire for power is a fundamental human drive. Learn to recognize it in yourself and others.",
+    "Behind everyone's mask is a story, a set of experiences that have shaped them. Try to understand that story.",
+    "Self-awareness is the foundation of wisdom. Know thyself before trying to understand others.",
+    "Beware of people who praise you too much. They might be trying to trick you into doing something for them.",
+    "We are all actors on a stage, playing roles we have been assigned or have chosen for ourselves.",
+    "The need to belong is a fundamental human drive, shaping our actions and beliefs.",
+    "Conformity is a powerful social force; we often mirror those around us to gain acceptance.",
+    "True understanding comes from looking beyond outward appearances and considering inner motivations.",
+    "Unacknowledged emotions can sabotage our best intentions and lead to destructive behavior.",
+    "Personal growth begins with the courage to confront our own flaws and inconsistencies.",
+    "Influence is often achieved not through force, but through understanding and appealing to others' needs.",
+    "Skepticism, when balanced with trust, is a valuable tool for navigating social interactions.",
+    "Our past experiences cast long shadows, shaping our present behavior in ways we may not realize."
+]
+
         }
         ]
   
