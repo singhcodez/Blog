@@ -53,9 +53,9 @@ for (let i = 0; i < bookNames.length; i++) {
 }
 
 searchbtn.addEventListener("click",()=>{
-       
+       document.getElementById("select-sec").setAttribute("class","select-secAnimate")
         setInterval(()=>{
-          document.getElementById("select-sec").setAttribute("class","select-secAnimate")
-        document.getElementById("select-sec").style.top="0pt";},400);
+          
+        document.getElementById("select-sec").style.cssText="top:-18pt; z-index:100;"},500);
 })
 
