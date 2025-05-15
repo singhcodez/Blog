@@ -111,9 +111,10 @@ input[type="radio"]{
 }
 .quotes li:hover{
     color: #ffffff;
+    }
+li:hover{
     font-weight: bold;
 }
-
 a{
     text-decoration: none;
     color:var(--quote-text);
