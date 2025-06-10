@@ -9,9 +9,22 @@
 <body>
     <div class="navbar">
     <a href="../../index.html">Home</a>
-    <a href="all_quotes.html">Show All Quotes</a>
+    <a href="#" id="show" >Show All Quotes</a>
     <a href="./48-Laws-of-Power1.html">Next</a>
 </div>
+    
+    <div id="myOverlay" class="overlay">
+        <div class="overlay-content">
+            <a href="#" onclick="closeNav()">About</a>
+            <a href="#" onclick="closeNav()">Services</a>
+            <a href="#" onclick="closeNav()">Clients</a>
+            <a href="#" onclick="closeNav()">Contact</a>
+            <a href="">Another Link</a>
+          <a href="javascript:void(0)" class="closebtn" id="close">&times;</a>
+        </div>
+
+    </div>
+    
     <div class="container">
         
         
@@ -63,6 +76,7 @@
             <p>&copy; 2025 [3am sumarise]. All rights reserved.</p>
         </div>
     </div>
+    <script src="../quote.js" type="module"></script>
 </body>
 </html>
 

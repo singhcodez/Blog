@@ -2,17 +2,19 @@
     --primary:#B4121B;
     --secondary:#DF414A;
   }
-  
+  *{
+      box-sizing: border-box;
+  }
    body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             margin: 0;
             padding: 0;
-            background-color: #333;
+            background-color: #332222;
             color: #f4f4f4;
         }
        
-        
+        /* nav bar */
         .navbar {
             background-color: var(--primary);
             overflow: hidden;
@@ -37,6 +39,73 @@
             font-weight: bold;
         }
 
+         
+        /* --- Overlay Menu Styles --- */
+        .overlay {
+            opacity:0.9;
+            height:0; /* Start hidden */
+            width: 100%;
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            top: 0;
+            left: 0;
+            background-color: rgba(0,0,0, 0.9); /* Black w/ opacity */
+            overflow-y: auto; /* Allow vertical scroll if content overflows */
+            transition: height 0.5s ease-in-out; /* Smooth transition for height */
+            display: flex;
+            flex-direction: column; /* Stack items */
+            align-items: center; /* Center horizontally */
+            padding-bottom: 0px; /* Make space for the close button at the bottom */
+            box-sizing: border-box; /* Include padding in height */
+        }
+
+        .overlay-content {
+            position: relative;
+            top: 0; /* Adjust as needed */
+            width: 80%; /* Adjust width of content area */
+            text-align: center;
+            margin-top: 10px;
+            flex-grow: 1; /* Take up remaining vertical space */
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Center links vertically within the content area */
+        }
+
+        .overlay a {
+            padding: 10px;
+            text-decoration: none;
+            font-size: 1em;
+            color: #f1f1f1;
+            display: block; /* Make links stack vertically */
+            transition: color 0.3s; /* Smooth transition on hover */
+            margin-bottom: 10px; /* Space between links */
+        }
+
+        .overlay a:hover, .overlay a:focus {
+            color: #999; /* Highlight color on hover/focus */
+        }
+
+        .overlay .closebtn {
+            position: absolute; /* Position relative to the overlay */
+            bottom: 0px;
+            left: 50%;
+            transform: translateX(-50%); /* Center horizontally */
+            font-size: 2em; /* Adjust size */
+            color: #f1f1f1;
+            cursor: pointer;
+            text-decoration: none; /* Remove underline for the close button */
+            transition: color 0.3s, transform 0.5s ease-in-out; /* Smooth rotation */
+        }
+
+        .overlay .closebtn:hover {
+            color: #fbbd08;
+        }
+
+        /* Style for rotation during opening */
+        .overlay.open .closebtn {
+            transform: translateX(-50%) rotate(180deg); /* Rotate by 180 degrees when open */
+        }
+
         .content {
             padding: 20px;
             text-align: center;
@@ -46,7 +115,7 @@
             max-width: 800px;
             margin: 20px auto;
             padding: 20px;
-            background-color: #333;
+            background-color: #332222;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
         }
@@ -139,3 +208,5 @@
             background-color: var(--primary); /* Even darker on click */
             transform: translateY(0);
         }
+        
+        

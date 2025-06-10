@@ -3,28 +3,124 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Previous & Next Buttons</title>
+    <title>Complete Page with Dynamic Menu</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
+            overflow-x: hidden; /* Prevent horizontal scrollbar during transition */
             display: flex; /* Use flexbox for overall page layout */
             flex-direction: column;
             min-height: 100vh; /* Ensure body takes full viewport height */
         }
 
-        .content {
+        /* --- Main Navigation Bar --- */
+        .navbar {
+            background-color: #333;
+            overflow: hidden;
+            text-align: center;
+            padding: 10px 0;
+            position: relative;
+            z-index: 2; /* Ensure navbar is above main content but below overlay when open */
+        }
+
+        .navbar a {
+            display: inline-block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+            font-size: 17px;
+            margin: 0 5px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar a:hover {
+            background-color: #575757;
+        }
+
+        /* --- Overlay Menu Styles --- */
+        .overlay {
+            height: 0; /* Start hidden */
+            width: 100%;
+            position: fixed; /* Stay in place */
+            z-index: 3; /* Sit on top */
+            top: 0;
+            left: 0;
+            background-color: rgba(0,0,0, 0.9); /* Black w/ opacity */
+            overflow-y: auto; /* Allow vertical scroll if content overflows */
+            transition: height 0.5s ease-in-out; /* Smooth transition for height */
+            display: flex;
+            flex-direction: column; /* Stack items */
+            align-items: center; /* Center horizontally */
+            padding-bottom: 60px; /* Make space for the close button at the bottom */
+            box-sizing: border-box; /* Include padding in height */
+        }
+
+        .overlay-content {
+            position: relative;
+            top: 10%; /* Adjust as needed */
+            width: 80%; /* Adjust width of content area */
+            text-align: center;
+            margin-top: 20px;
+            flex-grow: 1; /* Take up remaining vertical space */
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Center links vertically within the content area */
+        }
+
+        .overlay a {
+            padding: 15px;
+            text-decoration: none;
+            font-size: 30px;
+            color: #f1f1f1;
+            display: block; /* Make links stack vertically */
+            transition: color 0.3s; /* Smooth transition on hover */
+            margin-bottom: 10px; /* Space between links */
+        }
+
+        .overlay a:hover, .overlay a:focus {
+            color: #fbbd08; /* Highlight color on hover/focus */
+        }
+
+        .overlay .closebtn {
+            position: absolute; /* Position relative to the overlay */
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%); /* Center horizontally */
+            font-size: 40px; /* Adjust size */
+            color: #f1f1f1;
+            cursor: pointer;
+            text-decoration: none; /* Remove underline for the close button */
+            transition: color 0.3s, transform 0.5s ease-in-out; /* Smooth rotation */
+        }
+
+        .overlay .closebtn:hover {
+            color: #fbbd08;
+        }
+
+        /* Style for rotation during opening */
+        .overlay.open .closebtn {
+            transform: translateX(-50%) rotate(180deg); /* Rotate by 180 degrees when open */
+        }
+
+        /* --- Main Content Area --- */
+        .main-content {
             flex-grow: 1; /* Allows content to take up available space */
             padding: 20px;
             text-align: center;
+            z-index: 1; /* Ensure content is below overlay */
+            position: relative;
             display: flex; /* Use flexbox for centering content */
             flex-direction: column;
             justify-content: center;
             align-items: center;
         }
 
+        /* --- Previous/Next Buttons --- */
         .button-container {
             width: 100%;
             display: flex;
@@ -33,6 +129,8 @@
             box-sizing: border-box; /* Include padding in the element's total width and height */
             margin-top: auto; /* Pushes the container to the bottom */
             margin-bottom: 20px; /* Space below the buttons */
+            z-index: 1; /* Ensure buttons are below overlay */
+            position: relative;
         }
 
         .button-container a {
@@ -59,16 +157,49 @@
 </head>
 <body>
 
-    <div class="content">
+    <div class="navbar">
+        <a href="index.html">Home</a>
+        <a href="all_quotes.html">Show All Quotes</a>
+        <a href="next_page.html">Next</a>
+        <a href="#" onclick="openNav()">Open Menu</a> </div>
+
+    <div id="myOverlay" class="overlay">
+        <div class="overlay-content">
+            <a href="#" onclick="closeNav()">About</a>
+            <a href="#" onclick="closeNav()">Services</a>
+            <a href="#" onclick="closeNav()">Clients</a>
+            <a href="#" onclick="closeNav()">Contact</a>
+            <a href="#" onclick="closeNav()">Another Link</a>
+        </div>
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    </div>
+
+    <div class="main-content">
         <h1>Your Page Content Here</h1>
         <p>This is where the main information of your page will go.</p>
         <p>Imagine reading an article or viewing an image gallery.</p>
+        <p>Scroll down to see the previous/next buttons.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p>Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, turpis et commodo pharetra, est eros bibendum elit, nec luctus magna felis sollicitudin mauris. Integer in mauris eu nibh euismod gravida. Duis ac tellus et risus auctor mattis. Praesent dictum eleifend sapien. Proin in ante et sapien a. Maecenas fermentum, orci vitae.</p>
+        <p>Donec eu mi sed turpis feugiat feugiat. Integer egestas interdum leo. Sed eget quam. Mauris vitae mi vitae quam pulvinar dictum. Fusce vel justo at ipsum volutpat varius. Aenean non lacus ac turpis semper.</p>
     </div>
 
     <div class="button-container">
         <a href="previous_page.html">Previous</a>
         <a href="next_page.html">Next</a>
     </div>
+
+    <script>
+        function openNav() {
+            document.getElementById("myOverlay").style.height = "50%"; // Set to 50% of viewport height
+            document.getElementById("myOverlay").classList.add("open"); // Add 'open' class for rotation
+        }
+
+        function closeNav() {
+            document.getElementById("myOverlay").style.height = "0%";
+            document.getElementById("myOverlay").classList.remove("open"); // Remove 'open' class to reset rotation
+        }
+    </script>
 
 </body>
 </html>
