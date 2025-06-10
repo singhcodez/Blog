@@ -120,7 +120,7 @@
         }
 
         .button-container a {
-            background-color: var(--primary); /* Blue background for buttons */
+            background-color: var(--secondary); /* Blue background for buttons */
             color: white;
             padding: 9px 20px;
             text-decoration: none;
@@ -131,7 +131,7 @@
         }
 
         .button-container a:hover {
-            background-color: var(--secondary); /* Darker blue on hover */
+            background-color: var(--primary); /* Darker blue on hover */
             transform: translateY(-2px); /* Slight lift effect */
         }
 
