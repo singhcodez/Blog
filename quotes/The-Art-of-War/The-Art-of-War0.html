@@ -1,14 +1,74 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Previous & Next Buttons</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex; /* Use flexbox for overall page layout */
+            flex-direction: column;
+            min-height: 100vh; /* Ensure body takes full viewport height */
+        }
+
+        .content {
+            flex-grow: 1; /* Allows content to take up available space */
+            padding: 20px;
+            text-align: center;
+            display: flex; /* Use flexbox for centering content */
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .button-container {
+            width: 100%;
+            display: flex;
+            justify-content: space-between; /* Pushes buttons to far ends */
+            padding: 20px;
+            box-sizing: border-box; /* Include padding in the element's total width and height */
+            margin-top: auto; /* Pushes the container to the bottom */
+            margin-bottom: 20px; /* Space below the buttons */
+        }
+
+        .button-container a {
+            background-color: #007bff; /* Blue background for buttons */
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 18px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .button-container a:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+            transform: translateY(-2px); /* Slight lift effect */
+        }
+
+        .button-container a:active {
+            background-color: #004085; /* Even darker on click */
+            transform: translateY(0);
+        }
+    </style>
 </head>
-
 <body>
-hrlloo
-</body>
 
+    <div class="content">
+        <h1>Your Page Content Here</h1>
+        <p>This is where the main information of your page will go.</p>
+        <p>Imagine reading an article or viewing an image gallery.</p>
+    </div>
+
+    <div class="button-container">
+        <a href="previous_page.html">Previous</a>
+        <a href="next_page.html">Next</a>
+    </div>
+
+</body>
 </html>

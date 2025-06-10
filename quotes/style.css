@@ -1,3 +1,8 @@
+  :root{
+    --primary:#B4121B;
+    --secondary:#DF414A;
+  }
+  
    body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
@@ -9,7 +14,7 @@
        
         
         .navbar {
-            background-color: #B4121B;
+            background-color: var(--primary);
             overflow: hidden;
             text-align: center; /* Center the navigation links */
             padding: 10px 0;
@@ -28,7 +33,7 @@
         }
 
         .navbar a:hover {
-            background-color: #DF414A;
+            background-color:var(--secondary);
             font-weight: bold;
         }
 
@@ -103,4 +108,34 @@
             border-top: 1px solid #eee;
             color: #777;
             font-size: 0.9em;
+        }
+           .button-container {
+            width: 100%;
+            display: flex;
+            justify-content: space-between; /* Pushes buttons to far ends */
+            padding: 20px;
+            box-sizing: border-box; /* Include padding in the element's total width and height */
+            margin-top: auto; /* Pushes the container to the bottom */
+            margin-bottom: 20px; /* Space below the buttons */
+        }
+
+        .button-container a {
+            background-color: var(--primary); /* Blue background for buttons */
+            color: white;
+            padding: 9px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 18px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .button-container a:hover {
+            background-color: var(--secondary); /* Darker blue on hover */
+            transform: translateY(-2px); /* Slight lift effect */
+        }
+
+        .button-container a:active {
+            background-color: var(--primary); /* Even darker on click */
+            transform: translateY(0);
         }

@@ -1,0 +1,1 @@
+// integrate nav bar + next buttons using js 
