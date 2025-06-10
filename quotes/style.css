@@ -1,0 +1,106 @@
+   body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #333;
+            color: #f4f4f4;
+        }
+       
+        
+        .navbar {
+            background-color: #B4121B;
+            overflow: hidden;
+            text-align: center; /* Center the navigation links */
+            padding: 10px 0;
+        }
+
+        .navbar a {
+            display: inline-block; /* Make links behave like blocks but allow them on the same line */
+            color: #fff;
+            text-align: center;
+            padding: 4px 10px;
+            text-decoration: none;
+            font-size: .8em;
+            margin: 0 5px; /* Add some space between links */
+            border-radius: 5px; /* Slightly rounded corners */
+            transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+        }
+
+        .navbar a:hover {
+            background-color: #DF414A;
+            font-weight: bold;
+        }
+
+        .content {
+            padding: 20px;
+            text-align: center;
+        }
+    
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #333;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        h1, h2, h3 {
+            color: #f4f4f4;
+            text-align: center;
+        }
+        h1 {
+            font-size: 2.em;
+            color:gold;
+            margin-bottom: 20px;
+        }
+        h2 {
+            font-size: 1.5em;
+            margin-top: 30px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+        h3 {
+            font-size: 1.4em;
+            margin-top: 25px;
+        }
+        p {
+            margin-bottom: 15px;
+        }
+        ul {
+            list-style-type: disc;
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+        ul li {
+            margin-bottom: 8px;
+        }
+        strong {
+            color: gold;
+        }
+        em {
+            font-style: italic;
+            color: #fff;
+        }
+        blockquote {
+            background-color: #f9f9f9;
+            border-left: 5px solid #ddd;
+            margin: 1.5em 10px;
+            padding: 0.5em 10px;
+            font-style: italic;
+            color: #fff;
+        }
+        .quote-author {
+            display: block;
+            text-align: right;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            color: #777;
+            font-size: 0.9em;
+        }

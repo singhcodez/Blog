@@ -20,7 +20,7 @@ body {
     font-size: 15px;
     color: snow;
     background: var(--bg);
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 #top-sec{
     border-radius: 10px 10px 0px 0px;
@@ -54,14 +54,14 @@ body {
     margin:0px;
     padding: 0pt;
     padding: 0pt 2pt;
-    font-size:8pt;
+    font-size:0.7em;
     
 }
 blockquote{
     text-align: center;
     font-family:"Segoe UI", Tahoma, Geneva, Verdana,arial;
     font-weight: bold;
-    font-size: 26pt;
+    font-size: 2.3em;
     padding:10pt 5pt;
 }
 #search{
@@ -79,7 +79,7 @@ blockquote{
     display: flex;
     flex-direction: row;
     justify-content:space-evenly;
-    font-size:15pt;
+    font-size:1.5em;
     font-weight: normal;
     border-radius:0px 0px 10px 10px;
     
@@ -129,7 +129,15 @@ li a:hover{
 a{
     text-decoration: none;
     color:var(--quote-text);
-    font-size:14pt;
+    font-size:1.3em;
     font-family: Arial, Helvetica;
 }
 
+.footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            color: #777;
+            font-size: 0.9em;
+        }

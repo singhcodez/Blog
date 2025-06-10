@@ -67,6 +67,10 @@ export const books=[
     "Our past experiences cast long shadows, shaping our present behavior in ways we may not realize."
 ]
 
+        },
+        {name:"48-Laws-of-Power",
+          author:"Robert Greene",
+          quotes:["Law1"]
         }
         ]
   
