@@ -86,11 +86,11 @@ const listQuotes=(book)=>{
     // quoteflag=1, come from searching
     if(quoteflag){
        if(quote.toLowerCase().includes(searchbtn.value.toLowerCase()))
-        quotes += `<li><a href="./quotes/${book.name}/${book.name}${index}.html">${quote}</a></li><br><br>`;    
+        quotes += `<li><a href="./quotes/${book.name}/${book.name}${index}.html?book=${book.name}">${quote}</a></li><br><br>`;    
     }
     //quoteflag=0, comes from display 
     else{
-  quotes += `<li><a href="./quotes/${book.name}/${book.name}${index}.html">${quote}</a></li><br>`;
+  quotes += `<li><a href="./quotes/${book.name}/${book.name}${index}.html?book=${book.name}">${quote}</a></li><br>`;
     }
 });
   return quotes;

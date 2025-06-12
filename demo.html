@@ -1,4 +1,53 @@
-export const books=[
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Quotes Blog</title>
+    <style>
+        body { font-family: sans-serif; margin: 20px; }
+        .quote-container {
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid #eee;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        .quote-item {
+            margin-bottom: 10px;
+            padding: 10px;
+            border-bottom: 1px dashed #ddd;
+        }
+        .quote-item:last-child {
+            border-bottom: none;
+        }
+        #showAllQuotesBtn {
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        #showAllQuotesBtn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Quotes from <span id="bookTitle"></span></h1>
+
+    <button id="showAllQuotesBtn">Show All Quotes</button>
+
+    <div id="quotesDisplay" class="quote-container">
+        <p>Tap "Show All Quotes" to see them!</p>
+    </div>
+
+    <script>
+          const books = [
         {
         name:"The-Art-of-War",
         author:"Sun Tzu",
@@ -70,7 +119,79 @@ export const books=[
         },
         {name:"48-Laws-of-Power",
           author:"Robert Greene",
-          quotes:["Law 1: Never Outshine Your Master","Law 2 : "]
+          quotes:["Law1"]
         }
-        ]
-  
+        ];
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const showAllQuotesBtn = document.getElementById('showAllQuotesBtn');
+    const quotesDisplayDiv = document.getElementById('quotesDisplay');
+    const bookTitleSpan = document.getElementById('bookTitle');
+
+    // --- How to get the book name ---
+    // When a user taps a quote in your index file and navigates to the blog page,
+    // you need to pass the book's name (or ID) to this blog page.
+    // The most common ways are:
+    // 1. Using URL parameters (e.g., blog.html?book=The-Art-of-War)
+    // 2. Using localStorage or sessionStorage
+
+    // For this example, let's assume we're getting the book name from a URL parameter.
+    // Example URL: yourblogpage.html?bookName=The-Art-of-War
+    const urlParams = new URLSearchParams(window.location.search);
+    const bookNameFromURL = urlParams.get('bookName'); // Get the 'bookName' parameter
+
+    let currentBookName = '';
+
+    if (bookNameFromURL) {
+        currentBookName = decodeURIComponent(bookNameFromURL.replace(/-/g, ' ')); 
+        // Convert "The-Art-of-War" to "The Art of War"
+        bookTitleSpan.textContent = currentBookName;
+    } else {
+        // Fallback if no book name is provided in the URL
+        currentBookName = 'No Book Selected';
+        bookTitleSpan.textContent = currentBookName;
+        quotesDisplayDiv.innerHTML = '<p>Please navigate from the index page to select a book.</p>';
+        showAllQuotesBtn.disabled = true; // Disable button if no book is selected
+        return; // Stop execution if no book is found
+    }
+
+    // Function to display all quotes for a given book name
+    const displayAllQuotes = (bookName) => {
+        // Clear previous quotes
+        quotesDisplayDiv.innerHTML = '';
+
+        const book = books.find(b => b.name.toLowerCase() === bookName.toLowerCase().replace(/ /g, '-'));
+
+        if (book && book.quotes.length > 0) {
+            book.quotes.forEach(quote => {
+                const quoteParagraph = document.createElement('p');
+                quoteParagraph.classList.add('quote-item');
+                quoteParagraph.textContent = quote;
+                quotesDisplayDiv.appendChild(quoteParagraph);
+            });
+        } else {
+            quotesDisplayDiv.innerHTML = `<p>No quotes found for "${currentBookName}".</p>`;
+        }
+    };
+
+    // Add event listener to the "Show All Quotes" button
+    showAllQuotesBtn.addEventListener('click', () => {
+        if (currentBookName) {
+            displayAllQuotes(currentBookName);
+        }
+    });
+
+    // Optional: You might want to automatically display quotes when the page loads,
+    // especially if you're passing a specific quote's index from the previous page
+    // and want to show all quotes once the user lands here.
+    // If you want to show all quotes immediately on page load for the selected book:
+    // displayAllQuotes(currentBookName);
+});
+
+            
+           
+    </script> </body>
+</html>
+
+
