@@ -3,203 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Complete Page with Dynamic Menu</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            overflow-x: hidden; /* Prevent horizontal scrollbar during transition */
-            display: flex; /* Use flexbox for overall page layout */
-            flex-direction: column;
-            min-height: 100vh; /* Ensure body takes full viewport height */
-        }
-
-        /* --- Main Navigation Bar --- */
-        .navbar {
-            background-color: #333;
-            overflow: hidden;
-            text-align: center;
-            padding: 10px 0;
-            position: relative;
-            z-index: 2; /* Ensure navbar is above main content but below overlay when open */
-        }
-
-        .navbar a {
-            display: inline-block;
-            color: white;
-            text-align: center;
-            padding: 14px 20px;
-            text-decoration: none;
-            font-size: 17px;
-            margin: 0 5px;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-
-        .navbar a:hover {
-            background-color: #575757;
-        }
-
-        /* --- Overlay Menu Styles --- */
-        .overlay {
-            height: 0; /* Start hidden */
-            width: 100%;
-            position: fixed; /* Stay in place */
-            z-index: 3; /* Sit on top */
-            top: 0;
-            left: 0;
-            background-color: rgba(0,0,0, 0.9); /* Black w/ opacity */
-            overflow-y: auto; /* Allow vertical scroll if content overflows */
-            transition: height 0.5s ease-in-out; /* Smooth transition for height */
-            display: flex;
-            flex-direction: column; /* Stack items */
-            align-items: center; /* Center horizontally */
-            padding-bottom: 60px; /* Make space for the close button at the bottom */
-            box-sizing: border-box; /* Include padding in height */
-        }
-
-        .overlay-content {
-            position: relative;
-            top: 10%; /* Adjust as needed */
-            width: 80%; /* Adjust width of content area */
-            text-align: center;
-            margin-top: 20px;
-            flex-grow: 1; /* Take up remaining vertical space */
-            display: flex;
-            flex-direction: column;
-            justify-content: center; /* Center links vertically within the content area */
-        }
-
-        .overlay a {
-            padding: 15px;
-            text-decoration: none;
-            font-size: 30px;
-            color: #f1f1f1;
-            display: block; /* Make links stack vertically */
-            transition: color 0.3s; /* Smooth transition on hover */
-            margin-bottom: 10px; /* Space between links */
-        }
-
-        .overlay a:hover, .overlay a:focus {
-            color: #fbbd08; /* Highlight color on hover/focus */
-        }
-
-        .overlay .closebtn {
-            position: absolute; /* Position relative to the overlay */
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%); /* Center horizontally */
-            font-size: 40px; /* Adjust size */
-            color: #f1f1f1;
-            cursor: pointer;
-            text-decoration: none; /* Remove underline for the close button */
-            transition: color 0.3s, transform 0.5s ease-in-out; /* Smooth rotation */
-        }
-
-        .overlay .closebtn:hover {
-            color: #fbbd08;
-        }
-
-        /* Style for rotation during opening */
-        .overlay.open .closebtn {
-            transform: translateX(-50%) rotate(180deg); /* Rotate by 180 degrees when open */
-        }
-
-        /* --- Main Content Area --- */
-        .main-content {
-            flex-grow: 1; /* Allows content to take up available space */
-            padding: 20px;
-            text-align: center;
-            z-index: 1; /* Ensure content is below overlay */
-            position: relative;
-            display: flex; /* Use flexbox for centering content */
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-
-        /* --- Previous/Next Buttons --- */
-        .button-container {
-            width: 100%;
-            display: flex;
-            justify-content: space-between; /* Pushes buttons to far ends */
-            padding: 20px;
-            box-sizing: border-box; /* Include padding in the element's total width and height */
-            margin-top: auto; /* Pushes the container to the bottom */
-            margin-bottom: 20px; /* Space below the buttons */
-            z-index: 1; /* Ensure buttons are below overlay */
-            position: relative;
-        }
-
-        .button-container a {
-            background-color: #007bff; /* Blue background for buttons */
-            color: white;
-            padding: 12px 25px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: 18px;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .button-container a:hover {
-            background-color: #0056b3; /* Darker blue on hover */
-            transform: translateY(-2px); /* Slight lift effect */
-        }
-
-        .button-container a:active {
-            background-color: #004085; /* Even darker on click */
-            transform: translateY(0);
-        }
-    </style>
+    <title>The Art of War</title>
+   <link rel="stylesheet" href="../style.css"
 </head>
 <body>
-
-    <div class="navbar">
-        <a href="index.html">Home</a>
-        <a href="all_quotes.html">Show All Quotes</a>
-        <a href="next_page.html">Next</a>
-        <a href="#" onclick="openNav()">Open Menu</a> </div>
-
+    <div id="navbar" class="navbar">
+    <a href="../../index.html">Home</a>
+    <a href="#" id="show" >Show All Quotes</a>
+    <a href="./48-Laws-of-Power1.html">Next</a>
+</div>
+    
     <div id="myOverlay" class="overlay">
-        <div class="overlay-content">
-            <a href="#" onclick="closeNav()">About</a>
-            <a href="#" onclick="closeNav()">Services</a>
-            <a href="#" onclick="closeNav()">Clients</a>
-            <a href="#" onclick="closeNav()">Contact</a>
-            <a href="#" onclick="closeNav()">Another Link</a>
+        <div id="show-quote" class="overlay-content">
+            
+
         </div>
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+    </div>
+    
+    <div class="container">
+        
+        
+        <h1>The Shadow Play: Why Being Too Good Can Hurt You</h1>
+
+        <p>In the tricky world of power, your best qualities can, strangely enough, become your biggest problems. We're often told to do our best, stand out, and get noticed. But what if shining too brightly could stop your progress, or even end it completely?</p>
+
+        <p>This is the cold truth of Law 1 from Robert Greene's <em>The 48 Laws of Power</em>: <strong>"Never Outshine the Master."</strong> It might sound odd because we're usually told to be ambitious. But it's a very real and often harsh rule that has shaped the lives of countless people through time. This law isn't about being weak or hiding your skills. It's about being smart, understanding the darker side of human nature, and keeping yourself safe from hidden dangers.</p>
+
+        <h2>Why It Happens: Powerful People Get Scared Too</h2>
+        <p>At its heart, Law 1 works because people in power often feel unsure of themselves. Whether they're your boss, a teacher, an older relative, or a strong leader, people at the top can have sensitive egos. Their position gives them power, but their self-worth can be shaky. Your brilliance, no matter how good your intentions, can feel like a direct threat to their skills, their power, and even who they are.</p>
+        <p>Think about the new person at work, full of great ideas, maybe even correcting the boss's mistakes in meetings. What seems like being helpful can easily feel like a direct challenge to the boss. Imagine a young helper showing up an older, skilled worker. The older worker doesn't just see a talented person; they see someone stealing their fame, their good name, their very way of life. That smile on their face might hide quiet anger.</p>
+        <p>Or think about being with friends: you're always the one with the best ideas, telling the funniest jokes, or getting the most compliments. While you might enjoy the attention, others who want to be the center of attention, especially the hosts or group leaders, will feel jealous. Being the most dazzling guest at a party, making the host look less important, might get you fans right away, but it will certainly create quiet anger from those who planned the party.</p>
+
+        <h2>History's Lessons: When Being Great Was Bad</h2>
+        <p>History is full of sad stories that prove this law. Royal advisors who became too important, clever counselors who were smarter than their kings, or generals whose victories made them more popular than their ruler – these people often ended up in bad ways: sent away, put in jail, or even killed. Their talent wasn't rewarded; it was seen as a coming danger, a possible takeover. The king's smile, in such cases, often hid a knife. It's a clear reminder that when it comes to power, being good at something is often less important than seeming loyal and not dangerous.</p>
+
+        <h2>What Not to Do: Common Mistakes</h2>
+        <p>Not knowing Law 1 often leads to simple mistakes that cause downfall. Here are some common traps:</p>
+        <ul>
+            <li><strong>Believing "I'll be rewarded for being smart":</strong> This is a simple mistake in the world of power. Being loyal and not a threat is often valued more than being very talented.</li>
+            <li><strong>Giving answers that show your boss is wrong:</strong> Even if you're right, if it makes them look bad, you've basically sealed your own fate.</li>
+            <li><strong>Always trying to be the center of attention:</strong> Always taking credit, bragging, or showing off your achievements.</li>
+            <li><strong>Thinking your boss won't get jealous:</strong> Believing they are somehow immune to feeling insecure or jealous. They are human, and power often makes their weaknesses bigger.</li>
+        </ul>
+
+        <h2>How to Do It: The Art of Being Subtle</h2>
+        <p>Mastering Law 1 isn't about being average; it's about being incredibly smart in your actions. It's about playing a longer, wiser game.</p>
+        <ul>
+            <li><strong>Be Humble and Play Down Your Wins:</strong> Make your master look good, even if it means you don't get all the praise right away. Instead of saying, "I fixed that huge problem all by myself," try, "Thanks to your advice, I was able to find and solve that issue."</li>
+            <li><strong>Give Credit Upwards:</strong> Say that your success, or the success of a project you led, came from your master's wisdom, good planning, or strong support. In a meeting, quietly add phrases like, "As [Boss's Name] often says, 'Being ready is key,' and that really helped us do well here."</li>
+            <li><strong>Be "Helpful but Not Threatening":</strong> Become very useful, but never give the idea that you could easily take their place. Your ambition should be hidden, like a quiet fire burning inside.</li>
+            <li><strong>Pretend Not to Know Everything:</strong> Sometimes, knowing less (or acting like you do), or letting your master "discover" an obvious answer, can be safer than showing how much you know.</li>
+            <li><strong>Focus on Your Master's Ideas:</strong> Help them develop their ideas, making them shine even brighter, even if you quietly do most of the smart work. Let their name be connected with the success, and your influence will grow because they trust you.</li>
+        </ul>
+
+        <h2>The Long Game of Power</h2>
+        <p>Understanding and using Law 1 isn't about stopping your talent forever. It's about protecting yourself from dangerous reactions and setting yourself up for a safer and more lasting rise to power. By learning this law, you earn trust, avoid unneeded arguments, and learn to handle the tricky, often risky, world of human ego.</p>
+        <p>In the fast-moving world of power, the brightest stars often burn out the quickest. Learn to reflect the light, instead of trying to be the sun yourself. Your time will come, but only if you play the long game wisely.</p>
+       <!-- previos & next button-->
+           <div class="button-container">
+        <a href="../../index.html">Previous</a>
+        <a href="./48-Laws-of-Power1.html">Next learn </a>
     </div>
 
-    <div class="main-content">
-        <h1>Your Page Content Here</h1>
-        <p>This is where the main information of your page will go.</p>
-        <p>Imagine reading an article or viewing an image gallery.</p>
-        <p>Scroll down to see the previous/next buttons.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <p>Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, turpis et commodo pharetra, est eros bibendum elit, nec luctus magna felis sollicitudin mauris. Integer in mauris eu nibh euismod gravida. Duis ac tellus et risus auctor mattis. Praesent dictum eleifend sapien. Proin in ante et sapien a. Maecenas fermentum, orci vitae.</p>
-        <p>Donec eu mi sed turpis feugiat feugiat. Integer egestas interdum leo. Sed eget quam. Mauris vitae mi vitae quam pulvinar dictum. Fusce vel justo at ipsum volutpat varius. Aenean non lacus ac turpis semper.</p>
+
+
+        <div class="footer">
+            <p>&copy; 2025 [3am sumarise]. All rights reserved.</p>
+        </div>
     </div>
-
-    <div class="button-container">
-        <a href="previous_page.html">Previous</a>
-        <a href="next_page.html">Next</a>
-    </div>
-
-    <script>
-        function openNav() {
-            document.getElementById("myOverlay").style.height = "50%"; // Set to 50% of viewport height
-            document.getElementById("myOverlay").classList.add("open"); // Add 'open' class for rotation
-        }
-
-        function closeNav() {
-            document.getElementById("myOverlay").style.height = "0%";
-            document.getElementById("myOverlay").classList.remove("open"); // Remove 'open' class to reset rotation
-        }
-    </script>
-
+    <script src="../quote.js" type="module"></script>
 </body>
 </html>
+

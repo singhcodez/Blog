@@ -1,22 +1,20 @@
 // integrate nav bar + next buttons using js 
 import {books} from "../../data.js";
 //console.log(books);
-const footer=``;
-const navbar=``;
 
-
-const openNav =()=> {
-            document.getElementById("myOverlay").style.height = "90%"; // Set to 50% of viewport height
-            document.getElementById("myOverlay").classList.add("open"); // Add 'open' class for rotation
-        }
-    document.getElementById("show").addEventListener("click",openNav)
-     
-      // show all quotes 
+      // show all quotes
+   console.log(window.location)  
 const url=new  URLSearchParams(window.location.search)
-const bookname=url.get("book")
+const bookname=url.get("book")??"";
 
-books.forEach((book)=>{
+books.forEach((book,currentIndex)=>{
     if(book.name==bookname){
+        // nav tabs of navbar
+        document.getElementById("navbar").innerHTML=`    <a href="../../index.html">Home</a>
+    <a href="#" id="show" >Show All Quotes</a>
+    <a href="./${book.name}${currentIndex+1}.html">Next</a>`
+        
+        // show quotes of particular book
         book.quotes.forEach((quote)=>{
             document.getElementById("show-quote").innerHTML+=`${quote} <br>`;
         } )
@@ -25,7 +23,15 @@ books.forEach((book)=>{
     }
 }
 ) 
-      
+ 
+
+const openNav =()=> {
+            document.getElementById("myOverlay").style.height = "90%"; // Set to 50% of viewport height
+            document.getElementById("myOverlay").classList.add("open"); // Add 'open' class for rotation
+        }
+    document.getElementById("show").addEventListener("click",openNav)
+     
+     
         
 const closeNav=()=> {
             document.getElementById("myOverlay").style.height = "0%";
