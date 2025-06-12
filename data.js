@@ -70,7 +70,7 @@ export const books=[
         },
         {name:"48-Laws-of-Power",
           author:"Robert Greene",
-          quotes:["Law 1: Never Outshine Your Master","Law 2 : "]
+          quotes:["Law 1: Never Outshine Your Master","Law 2 : ","Law 3","Law 4"]
         }
         ]
   

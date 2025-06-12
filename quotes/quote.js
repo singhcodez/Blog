@@ -5,21 +5,21 @@ import {books} from "../../data.js";
       // show all quotes
    console.log(window.location)  
 const url=new  URLSearchParams(window.location.search)
-const bookname=url.get("book")??"";
+const bookname=url.get("book");
 
 books.forEach((book,currentIndex)=>{
     
     // problem ⭐ 
-        if(false){//bookname=null
+        if(!bookname){//bookname=null
         // nav tabs of navbar
         document.getElementById("navbar").innerHTML=`    <a href="../../index.html">Home</a>
     <a href="#" id="show" >Show All books</a>`
         
         // show quotes of particular book
-        books[Math.round(Math.random()*(--books.length))].quotes.forEach((quote)=>{
+        book.quotes.forEach((quote)=>{
             document.getElementById("show-quote").innerHTML+=`${quote} <hr>`;
         } )
-        document.getElementById("show-quote").innerHTML+=`<a href="javascript:void(0)" class="closebtn" id="close">&times;</a>`;
+       document.getElementById("show-quote").innerHTML+=`<a href="javascript:void(0)" class="closebtn" id="close">&times;</a>`;
      // previous & forward tabs 
        
        
@@ -31,25 +31,14 @@ books.forEach((book,currentIndex)=>{
         // nav tabs of navbar
         document.getElementById("navbar").innerHTML=`    <a href="../../index.html">Home</a>
     <a href="#" id="show" >Show All Quotes</a>
-    <a href="./${book.name}${currentIndex+1}.html">Next</a>`
+    <a href="./${book.name}${Math.round(Math.random()*(book.quotes.length-1))}.html?book=${bookname}">Next</a>`
         
         // show quotes of particular book
         book.quotes.forEach((quote)=>{
             document.getElementById("show-quote").innerHTML+=`${quote} <hr>`;
         } )
         document.getElementById("show-quote").innerHTML+=`<a href="javascript:void(0)" class="closebtn" id="close">&times;</a>`;
-     // previous & forward tabs 
-       if(currentIndex==0){
-       document.getElementById("prevNext").innerHTML=`           
-        <a href="../../index.html">Previous</a>
-        <a href="./${book.name}${currentIndex+1}.html">Next learn </a>`
-       }
-       else{
-           document.getElementById("prevNext").innerHTML=`           
-        <a href="./${book.name}${currentIndex-1}.html">Previous</a>
-        <a href="./${book.name}${currentIndex+1}.html">Next learn </a>`
-    
-       }
+
         return 0;
     }
 }
