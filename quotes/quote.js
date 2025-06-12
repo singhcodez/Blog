@@ -20,7 +20,7 @@ books.forEach((book)=>{
         book.quotes.forEach((quote)=>{
             document.getElementById("show-quote").innerHTML+=`${quote} <br>`;
         } )
-        document.getElementById("show-quote").innerHTML+=`         <a href="javascript:void(0)" class="closebtn" id="close">&times;</a>"`;
+        document.getElementById("show-quote").innerHTML+=`<a href="javascript:void(0)" class="closebtn" id="close">&times;</a>`;
         return 0;
     }
 }
