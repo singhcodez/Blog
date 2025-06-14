@@ -1,7 +1,9 @@
 // integrate nav bar + next buttons using js 
 import {books} from "../../data.js";
 //console.log(books);
-
+document.getElementById("navbar").innerHTML=`    <a href="../../index.html">Home</a>
+    <a href="#" id="show" >Show All books</a>`
+        
       // show all quotes
    console.log(window.location)  
 const url=new  URLSearchParams(window.location.search)
