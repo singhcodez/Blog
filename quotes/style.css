@@ -19,7 +19,7 @@
             background-color: var(--primary);
             overflow: hidden;
             text-align: center; /* Center the navigation links */
-            min-height:40px;
+            min-height:50px;
             padding: 10px 0;
         }
 
