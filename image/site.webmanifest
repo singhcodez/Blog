@@ -1,6 +1,6 @@
 {
-  "name": "MyWebSite",
-  "short_name": "MySite",
+  "name": "3AM Sumarise",
+  "short_name": "3AM Sumraise",
   "icons": [
     {
       "src": "/image/web-app-manifest-192x192.png",
